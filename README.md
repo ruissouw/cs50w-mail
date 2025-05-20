@@ -26,11 +26,11 @@ git clone https://github.com/yourusername/cs50w-mail.git
 
 cd cs50w-mail
 
-3. **Create a Virtual Environment**
+2. **Create a Virtual Environment**
    
 python -m venv env
 
-5. **Activate the Virtual Environment**
+3. **Activate the Virtual Environment**
    
 On macOS/Linux:
 
@@ -44,14 +44,14 @@ env\Scripts\activate
    
 pip install -r requirements.txt
 
-6. **Apply Migrations**
+5. **Apply Migrations**
    
 python manage.py migrate
 
-8. **Run the Development Server**
+6. **Run the Development Server**
    
 python manage.py runserver
 
-10. **Open the App in Your Browser**
+7. **Open the App in Your Browser**
     
 Visit http://127.0.0.1:8000/ to start using the application.
