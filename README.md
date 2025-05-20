@@ -21,13 +21,16 @@ Follow the steps below to get this project running on your local machine.
 ### Installation
 
 1. **Clone the Repository**
+   
 git clone https://github.com/yourusername/cs50w-mail.git
 cd cs50w-mail
 
-2. **Create a Virtual Environment**
+3. **Create a Virtual Environment**
+   
 python -m venv env
 
-3. **Activate the Virtual Environment**
+5. **Activate the Virtual Environment**
+   
 On macOS/Linux:
 source env/bin/activate
 
@@ -35,13 +38,17 @@ On Windows:
 env\Scripts\activate
 
 4. **Install Dependencies**
+   
 pip install -r requirements.txt
 
-5. **Apply Migrations**
+6. **Apply Migrations**
+   
 python manage.py migrate
 
-6. **Run the Development Server**
+8. **Run the Development Server**
+   
 python manage.py runserver
 
-7. **Open the App in Your Browser**
+10. **Open the App in Your Browser**
+    
 Visit http://127.0.0.1:8000/ to start using the application.
