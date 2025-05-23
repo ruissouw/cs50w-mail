@@ -22,7 +22,7 @@ Follow the steps below to get this project running on your local machine.
 
 1. **Clone the Repository**
    
-git clone https://github.com/yourusername/cs50w-mail.git
+git clone https://github.com/ruissouw/cs50w-mail.git
 
 cd cs50w-mail
 
