@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // By default, load the inbox
   load_mailbox('inbox');
-  
 });
 
 
@@ -85,11 +84,23 @@ function load_mailbox(mailbox) {
   fetch(`/emails/${mailbox}`)
   .then(response => response.json())
   .then(emails => {
+    return mailbox === "archive"
+      ? emails.filter(email => email.archived)     
+      : emails.filter(email => !email.archived);   
+  })  
+  .then(emails => {
       // Print emails
       console.log(emails);
 
       // Total number of emails
       const n = emails.length;
+
+      if (n === 0) {
+        const notFound = document.createElement('div');
+        notFound.innerHTML = 'No emails here.';
+        notFound.style = 'margin-top: 5px;';
+        document.querySelector('#emails-view').append(notFound);
+      }
 
       // Start with first email
       let counter = 0;
@@ -228,15 +239,22 @@ function view_email(event, mailbox) {
 }
 
 function archive_email(emailId, archived) {
-  // Mark email as archived
   fetch(`/emails/${emailId}`, {
     method: 'PUT',
-    body: JSON.stringify({
-        archived: archived
-    })
+    body: JSON.stringify({ archived: archived })
+  })
+  .then(response => {
+    if (!response.ok) throw new Error("Failed to archive");
+    return response;
+  })
+  .then(() => {
+    load_mailbox('archive'); 
+  })
+  .catch(error => {
+    console.error("Error archiving email:", error);
   });
-  load_mailbox('inbox');
 }
+
 
 function reply_email(emailId) {
   // Access email
