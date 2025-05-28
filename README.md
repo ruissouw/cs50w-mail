@@ -1,6 +1,9 @@
 # CS50W Mail
 A web-based email client built using Django, HTML, CSS (with Bootstrap), and JavaScript. This project was created as part of Harvard’s CS50 Web Programming with Python and JavaScript course.
 
+## Video Demonstration
+https://youtu.be/RkfQq6lQZaQ
+
 ## Features
 - Compose and send emails
 - View inbox, sent, and archived mailboxes
